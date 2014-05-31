@@ -1,0 +1,20 @@
+﻿Build started 2014/5/6 21:15:44.
+     1>Project "E:\Workspace\VC10.0\FaceDetect\FaceDetect\FaceDetect.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\FaceDetect.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       Link:
+         D:\Microsoft\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Workspace\VC10.0\FaceDetect\Release\FaceDetect.exe" /INCREMENTAL:NO /NOLOGO opencv_highgui242.lib opencv_imgproc242.lib opencv_core242.lib opencv_calib3d242.lib opencv_highgui242d.lib opencv_imgproc242d.lib opencv_core242d.lib opencv_calib3d242d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\FaceDetect.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Workspace\VC10.0\FaceDetect\Release\FaceDetect.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Workspace\VC10.0\FaceDetect\Release\FaceDetect.lib" /MACHINE:X86 Release\FaceDetector.obj
+         Release\Main.obj
+     1>FaceDetector.obj : error LNK2001: unresolved external symbol _mxGetData
+     1>FaceDetector.obj : error LNK2001: unresolved external symbol _mxGetField_730
+     1>FaceDetector.obj : error LNK2001: unresolved external symbol _mxGetPr
+     1>FaceDetector.obj : error LNK2001: unresolved external symbol _matGetVariable
+     1>FaceDetector.obj : error LNK2001: unresolved external symbol _matOpen
+     1>E:\Workspace\VC10.0\FaceDetect\Release\FaceDetect.exe : fatal error LNK1120: 5 unresolved externals
+     1>Done Building Project "E:\Workspace\VC10.0\FaceDetect\FaceDetect\FaceDetect.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.14
