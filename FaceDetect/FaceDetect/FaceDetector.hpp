@@ -11,8 +11,7 @@
 #include <vector>
 #include <string>
 #include <cv.h>
-#include "mat.h"
-#include "matrix.h"
+#include <opencv2/opencv.hpp>
 #include <omp.h>
 
 using namespace cv;
@@ -32,7 +31,6 @@ typedef struct
 	const short int *pLeftChild;
 	const short int *pRightChild;
 	const double *pFit;
-	const mxArray *pBranchNode;
 } TrainedParameters;
 
 template<typename T>
@@ -62,7 +60,8 @@ private:
 	long maxDetectNum;
 	TrainedParameters TrainedParams;
 	unsigned char**  buffer;
-	
+
+	Mat numStagesTrees,stageThreshold,treeRoot,fit,pix1,pix2,cutPts,lftChild,rgtChild;
 };
 
 #endif

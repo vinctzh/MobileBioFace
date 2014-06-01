@@ -1,4 +1,6 @@
 #include "FaceDetector.hpp"
+#include <iostream>
+using namespace std;
 
 double calcArea2(float corner1_x, float corner2_x, float corner1_y, float corner2_y)
 {
@@ -90,6 +92,11 @@ Mat FaceDetector::_FaceDetection(IplImage* pImg, int &after_mer) {
 			break;
 		}
 
+	/*	for (int i=0;i<15;i++)
+		{
+			cout<<TrainedParams.pNumStageTrees[i]<<endl;
+		}*/
+
 		CvSize dst_cvsize;
 		IplImage *dst=0;
 
@@ -151,7 +158,7 @@ Mat FaceDetector::_FaceDetection(IplImage* pImg, int &after_mer) {
 
 		for(int c = 0; c < colMax; c += winStep) // slide in column
 		{
-			const unsigned char *pPixel = pPyramidImages[k] + c * h;
+			const unsigned char *pPixel = pPyramidImages[k] + c * h; 
 			for(int r = 0; r < rowMax; r += winStep, pPixel += winStep) // slide in row
 			{    
 
@@ -437,24 +444,84 @@ Mat FaceDetector::_FaceDetection(IplImage* pImg, int &after_mer) {
 	return draw_point;
 }
 
+template<typename T>
+void initMat(Mat& m, const T* num)
+{
+	for(int i=0;i<m.rows;i++)
+		for(int j=0;j<m.cols;j++)
+		{
+			m.at<T>(i,j)=num[i*m.cols+j];
+			//cout<<*(num+i*m.cols+j)<<endl;
+		}
+
+
+	cout<<endl;
+}
 void FaceDetector::LoadTrainingParams(const char* file) {
 	//file="D:\\YZY\\HIK_NPD\\npd_model_1.mat";//读取检测文件
-	MATFile *pmat;
-	MATFile *pm;    
-	mxArray *pa,*img;
-	pmat=matOpen(file, "r");//打开文件，返回指向文件指针 
-	pa = matGetVariable(pmat, "npdModel"); 
-	TrainedParams.objSize = *(int*) mxGetData(mxGetField(pa, 0, "objSize"));
-	TrainedParams.numStages = *(int*) mxGetData(mxGetField(pa, 0, "numStages"));
-	TrainedParams.numLeafNodes = *(int*) mxGetData(mxGetField(pa, 0, "numLeafNodes"));
-	TrainedParams.pNumStageTrees = (int*) mxGetData(mxGetField(pa, 0, "numStageTrees"));
-	TrainedParams.pStageThreshold = mxGetPr(mxGetField(pa, 0, "stageThreshold"));
-	TrainedParams.pTreeRoot = (short int *) mxGetData(mxGetField(pa, 0, "treeRoot"));
-	TrainedParams.pBranchNode = mxGetField(pa, 0, "branchNode");
-	TrainedParams.pPoints1 = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "pixel1"));
-	TrainedParams.pPoints2 = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "pixel2"));
-	TrainedParams.pCutpoint = (float *) mxGetPr(mxGetField(TrainedParams.pBranchNode, 0, "cutpoint"));
-	TrainedParams.pLeftChild = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "leftChild"));
-	TrainedParams.pRightChild = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "rightChild"));
-	TrainedParams.pFit = mxGetPr(mxGetField(pa, 0, "fit"));
+	//MATFile *pmat;
+	//MATFile *pm;    
+	//mxArray *pa,*img;
+	//pmat=matOpen(file, "r");//打开文件，返回指向文件指针 
+	//pa = matGetVariable(pmat, "npdModel"); 
+	//TrainedParams.objSize = *(int*) mxGetData(mxGetField(pa, 0, "objSize"));
+	//TrainedParams.numStages = *(int*) mxGetData(mxGetField(pa, 0, "numStages"));
+	//TrainedParams.numLeafNodes = *(int*) mxGetData(mxGetField(pa, 0, "numLeafNodes"));
+	//TrainedParams.pNumStageTrees = (int*) mxGetData(mxGetField(pa, 0, "numStageTrees"));
+	//TrainedParams.pStageThreshold = mxGetPr(mxGetField(pa, 0, "stageThreshold"));
+	//TrainedParams.pTreeRoot = (short int *) mxGetData(mxGetField(pa, 0, "treeRoot"));
+	//TrainedParams.pBranchNode = mxGetField(pa, 0, "branchNode");
+
+	//TrainedParams.pPoints1 = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "pixel1"));
+	//TrainedParams.pPoints2 = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "pixel2"));
+	//TrainedParams.pCutpoint = (float *) mxGetPr(mxGetField(TrainedParams.pBranchNode, 0, "cutpoint"));
+	//TrainedParams.pLeftChild = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "leftChild"));
+	//TrainedParams.pRightChild = (short int *) mxGetData(mxGetField(TrainedParams.pBranchNode, 0, "rightChild"));
+	//TrainedParams.pFit = mxGetPr(mxGetField(pa, 0, "fit"));
+	
+	string filename = "npd_trained.xml";
+	FileStorage fsRead(filename,FileStorage::READ);
+	if (!fsRead.isOpened())	
+	{		
+		return;
+	}
+
+	TrainedParams.objSize = (int)fsRead["Object_Size"];
+	FileNode fn;
+	// Stages
+	fn = fsRead["Stages"];	
+	//Mat numStagesTrees,stageThreshold;
+	fn["Num_Of_StageTrees"]>> numStagesTrees;
+	fn["Stage_Threshold"] >> stageThreshold;	
+
+	TrainedParams.numStages = (int)fn["Num_Of_Stage"];
+	TrainedParams.pNumStageTrees = (int*) numStagesTrees.data;
+	TrainedParams.pStageThreshold = (double*) stageThreshold.data;
+
+	// Tree
+	fn = fsRead["Tree"];
+	//Mat treeRoot,fit;
+	fn["Fit"]>>fit;
+	fn["Tree_Root"]>>treeRoot;
+
+	TrainedParams.numLeafNodes = fn["Num_Of_LeafNodes"];
+	TrainedParams.pTreeRoot = (short*)treeRoot.data;
+	TrainedParams.pFit = (double*)fit.data;
+
+	// Branches
+	fn = fsRead["Branches"];
+	//Mat pix1,pix2,cutPts,lftChild,rgtChild;
+	fn["Pixels1"]>>pix1;
+	fn["Pixels2"]>>pix2;	
+	fn["Cut_Points"]>>cutPts;
+
+	fn["LeftChild"]>>lftChild;
+	fn["RightChild"]>>rgtChild;
+	TrainedParams.pPoints1 = (short*)pix1.data;
+	TrainedParams.pPoints2 = (short*)pix2.data;
+	TrainedParams.pCutpoint = (float*)cutPts.data;
+	TrainedParams.pLeftChild = (short*)lftChild.data;
+	TrainedParams.pRightChild = (short*)rgtChild.data;
+	
+	fsRead.release();
 }

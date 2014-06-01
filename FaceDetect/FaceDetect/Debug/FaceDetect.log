@@ -1,53 +1,59 @@
-﻿Build started 2014/5/31 0:24:17.
+﻿Build started 2014/6/2 3:12:05.
      1>Project "E:\GitWorks\MobileWiseFace\FaceDetect\FaceDetect\FaceDetect.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\FaceDetect.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         D:\Microsoft\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FaceDetector.cpp
+         D:\Microsoft\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FaceDetector.cpp Main.cpp
+         Main.cpp
+     1>d:\opencv\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\microsoft\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\main.cpp(11): warning C4101: 'finish' : unreferenced local variable
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\main.cpp(11): warning C4101: 'start' : unreferenced local variable
          FaceDetector.cpp
      1>d:\opencv\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  d:\microsoft\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(43): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(43): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(44): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(44): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(73): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(79): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(80): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(86): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(87): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(208): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(209): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(45): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(45): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(46): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(46): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(75): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(81): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(82): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(88): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(89): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(210): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(211): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(212): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(213): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(235): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(264): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(277): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(278): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(214): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(215): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(237): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(266): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(279): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(280): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(281): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(299): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(300): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(282): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(283): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(301): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(302): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(303): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(304): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(313): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(342): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(391): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(392): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(306): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(315): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(344): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(393): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(394): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(395): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(396): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(422): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(423): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(397): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(398): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(424): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
      1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(425): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(444): warning C4101: 'img' : unreferenced local variable
-     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(443): warning C4101: 'pm' : unreferenced local variable
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(426): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(427): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(459): warning C4101: 'img' : unreferenced local variable
+     1>e:\gitworks\mobilewiseface\facedetect\facedetect\facedetector.cpp(458): warning C4101: 'pm' : unreferenced local variable
+         Generating Code...
        Link:
          D:\Microsoft\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\GitWorks\MobileWiseFace\FaceDetect\Debug\FaceDetect.exe" /INCREMENTAL /NOLOGO libmat.lib libmx.lib libmex.lib libeng.lib opencv_imgproc249d.lib opencv_legacy249d.lib opencv_highgui249d.lib opencv_core249d.lib opencv_calib3d249d.lib opencv_contrib249.lib opencv_objdetect249d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FaceDetect.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\GitWorks\MobileWiseFace\FaceDetect\Debug\FaceDetect.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\GitWorks\MobileWiseFace\FaceDetect\Debug\FaceDetect.lib" /MACHINE:X86 Debug\FaceDetector.obj
          Debug\Main.obj
@@ -61,4 +67,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.77
+Time Elapsed 00:00:16.71
